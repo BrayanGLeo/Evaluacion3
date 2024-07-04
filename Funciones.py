@@ -106,7 +106,8 @@ def registrar_pedido():
             else:
                 print("El valor debe se númerico!!")
 
-        clientes.append([id, cliente, direccion, sector, seislts, diezlts, veinte])
+        veintelts=veinte
+        clientes.append([id, cliente, direccion, sector, seislts, diezlts, veintelts])
 
 def listar_pedidos():
     if len(clientes) != 0:
@@ -122,6 +123,8 @@ def listar_pedidos():
         """)
         pausa()
         system("cls")
+
+
             
 
 
