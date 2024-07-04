@@ -44,7 +44,6 @@ def registrar_pedido():
             5. San Pedro
             """)
             opcion=input("Ingrese el sector del cliente: ")
-            veinte=""
             match opcion:
                 case "1":
                     sector="Concepción"
@@ -85,44 +84,41 @@ def registrar_pedido():
                 print("Dato valido")
                 pausa()
                 system("cls")
+                diezlts=input("Ingrese la cantidad de dispensadores de 10 lts: ")
+                if diezlts.isnumeric():
+                    diezlts=int(diezlts)
+                    print("Dato valido")
+                    pausa()
+                    system("cls")
+                    veintelts=input("Ingrese la cantidad de dispensadores de 20 lts: ")
+                    if veintelts.isnumeric():
+                        veintelts=int(veintelts)
+                        print("Dato valido")
+                        pausa()
+                        system("cls")
+                        break
+                    else:
+                        print("El valor debe se númerico!!")
+                else:
+                    print("El valor debe se númerico!!")
             else:
                 print("El valor debe se númerico!!")
-            diezlts=input("Ingrese la cantidad de dispensadores de 10 lts: ")
-            if diezlts.isnumeric():
-                diezlts=int(diezlts)
-                print("Dato valido")
-                pausa()
-                system("cls")
-                break
-            else:
-                print("El valor debe se númerico!!")
-            veinte=input("Ingrese la cantidad de dispensadores de 20 lts: ")
-            if veinte.isnumeric():
-                veinte=int(veinte)
-                print("Dato valido")
-                pausa()
-                system("cls")
-                break
-            else:
-                print("El valor debe se númerico!!")
+        break
 
-        veintelts=veinte
         clientes.append([id, cliente, direccion, sector, seislts, diezlts, veintelts])
 
 def listar_pedidos():
     if len(clientes) != 0:
-        print
-        ("""
+        print("""
         ID      Cliente     Dirección       Sector      Disp.6lts       Disp.10lts      Disp.20lts
         """)
-        for cliente in cliente:
-            print
-        (f"""
-        {cliente[0]}    {cliente[1][0]:.1f}     {cliente[2]:.1f}    {cliente[3]:.1f}    {cliente[4]:.1f}    {cliente[5]:.1f}    {cliente[6]:.1f}    {cliente[7]:.1f}
-                        {cliente[1][1]:.1f}
-        """)
-        pausa()
-        system("cls")
+        for cliente in clientes:
+            print(f"""
+            {cliente[0]}    {cliente[1][0]}     {cliente[2]}    {cliente[3]}    {cliente[4]:.1f}    {cliente[5]:.1f}    {cliente[6]:.1f}
+                        {cliente[1][1]}
+            """)
+            pausa()
+            system("cls")
 
 
             
